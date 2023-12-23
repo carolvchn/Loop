@@ -130,7 +130,7 @@ final class CarbAbsorptionViewController: LoopChartsTableViewController, Identif
 
         var components = DateComponents()
         components.minute = 0
-        let date = Date(timeIntervalSinceNow: -TimeInterval(hours: max(1, totalHours)))
+        let date = Date(timeIntervalSinceNow: -TimeInterval(hours: max(5, totalHours)))
         let chartStartDate = Calendar.current.nextDate(after: date, matching: components, matchingPolicy: .strict, direction: .backward) ?? date
         if charts.startDate != chartStartDate {
             currentContext.formUnion(RefreshContext.all)
